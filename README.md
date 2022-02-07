@@ -74,6 +74,58 @@ npm i -g cordova
 
 npm install @ionic-native/vibration
 
+- Error: Error: The target entry-point "@ionic-native/vibration" has missing dependencies: [ng]  - @ionic-native/core
 
+npm i @ionic-native/core
+
+
+ionic serve --lab
+
+### Run Application in Real Device
+To check vibration functionality, you need to run the application in a real device. For that, you need to add the Platform for which you are going to build the application.
+
+
+#### Add Platform in Application
+Run the following command in the terminal to install the required platform
+
+```
+# Add Android
+$ ionic cordova platform add android
+
+# Add iOS
+$ ionic cordova platform add ios
+
+# Add Windows
+$ ionic cordova platform add windowsCopy
+```
+
+#### Build Runnable File
+After adding the platform, you can run the following commands to create an executable file like APK file for Android. Or you can simply run the app in the USB connected mobile with USB Debugging enabled discussed in the next step.
+
+```
+# Build Android
+$ ionic cordova build android
+
+# Build iOS
+$ ionic cordova build ios
+
+# Build Windows
+$ ionic cordova build windowsCopy
+```
+
+#### Live Run Application in USB connected Device
+If you just want to run the application in the real device and debug it on the Chrome browser, just execute the following command after connecting your mobile to your computer
+
+```
+# Live Run on Android
+$ ionic cordova run android -l
+
+# Live Run on iOS
+$ ionic cordova run ios -l
+
+# Live Run on Windows
+$ ionic cordova run windows -lCopy
+
+```
 
 
