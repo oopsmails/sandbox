@@ -128,4 +128,101 @@ $ ionic cordova run windows -l
 
 ```
 
+- Source path does not exist: resources/android/icon/drawable-hdpi-icon.png
+
+I had the same error, After running
+
+ionic resources
+
+Or
+
+ionic cordova resources
+
+
+- albert@albert-mint20:~/Documents/dev/ionic/sandbox/ionic-vibration$ ionic cordova resources
+> cordova-res
+[ERROR] cordova-res was not found on your PATH. Please install it globally:
+        
+        npm i -g cordova-res
+
+
+albert@albert-mint20:~/Documents/dev/ionic/sandbox/ionic-vibration$ ionic cordova resources
+> cordova-res
+[cordova-res] Generated 18 resources for Android
+[cordova-res] Generated 47 resources for iOS
+[cordova-res] Wrote to config.xml
+
+albert@albert-mint20:~/Documents/dev/ionic/sandbox/ionic-vibration$ ionic cordova platform add android
+Platform android already exists.
+
+
+- Error: Source path does not exist: resources/android/xml/network_security_config.xml
+
+
+Examine the resources folder if the xml folder exists in /android, if it doesn't just create it like..
+```
+resources/
+    android/
+        xml/
+           network_security_config.xml
+```
+
+Enter the following inside the file
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+<domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">localhost</domain>
+</domain-config>
+</network-security-config>
+```
+
+- Error: ANDROID_HOME
+
+```
+> cordova build android
+Checking Java JDK and Android SDK versions
+ANDROID_SDK_ROOT=undefined (recommended setting)
+ANDROID_HOME=undefined (DEPRECATED)
+Failed to find 'ANDROID_SDK_ROOT' environment variable. Try setting it manually.
+Failed to find 'android' command in your 'PATH'. Try update your 'PATH' to include path to valid SDK directory.
+
+```
+
+Type these commands in the console -
+
+export ANDROID_HOME=$HOME/Android/Sdk (Your SDK path)
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+To make it permanent for the current user, add it to the ~/.bashrc file (open it in terminal through vim ~/.bashrc)
+
+- Error: JAVA_HOME
+
+```
+> cordova build android
+Checking Java JDK and Android SDK versions
+ANDROID_SDK_ROOT=undefined (recommended setting)
+ANDROID_HOME=/home/albert/Android/Sdk (DEPRECATED)
+Failed to find 'JAVA_HOME' environment variable. Try setting it manually.
+[ERROR] An error occurred while running subprocess cordova.
+```
+
+- Error: gradle
+
+```
+> cordova build android
+Checking Java JDK and Android SDK versions
+ANDROID_SDK_ROOT=undefined (recommended setting)
+ANDROID_HOME=/home/albert/Android/Sdk (DEPRECATED)
+Using Android SDK: /home/albert/Android/Sdk
+Could not find an installed version of Gradle either in Android Studio,
+or on your system to install the gradle wrapper. Please include gradle 
+in your path, or install Android Studio
+```
+
+
+
+
 
