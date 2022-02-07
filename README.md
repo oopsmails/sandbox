@@ -96,7 +96,7 @@ $ ionic cordova platform add android
 $ ionic cordova platform add ios
 
 # Add Windows
-$ ionic cordova platform add windowsCopy
+$ ionic cordova platform add windows
 ```
 
 #### Build Runnable File
@@ -110,7 +110,7 @@ $ ionic cordova build android
 $ ionic cordova build ios
 
 # Build Windows
-$ ionic cordova build windowsCopy
+$ ionic cordova build windows
 ```
 
 #### Live Run Application in USB connected Device
@@ -124,7 +124,7 @@ $ ionic cordova run android -l
 $ ionic cordova run ios -l
 
 # Live Run on Windows
-$ ionic cordova run windows -lCopy
+$ ionic cordova run windows -l
 
 ```
 
