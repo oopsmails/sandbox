@@ -222,7 +222,121 @@ or on your system to install the gradle wrapper. Please include gradle
 in your path, or install Android Studio
 ```
 
+- Error in Android Studio: Terminal, run *ionic cordova build android*, ionic not found
+
+albert@albert-mint20:~$ npm list -g --depth=0
+/home/albert/.nvm/versions/node/v16.13.0/lib
+├── @angular/cli@13.0.3
+├── @ionic/cli@6.18.1
+├── cordova-res@0.15.4
+├── cordova@11.0.0
+├── corepack@0.10.0
+└── npm@8.1.0
+
+So, switch to bash, by, *bash*
+
+- Error, no Gradle
+
+Download gradle, which will be in zip file, add to PATH
+
+export GRADLE_HOME=/home/albert/Documents/programs/gradle-7.3.3
+export PATH=$PATH:$GRADLE_HOME/bin
 
 
+- Error in Android Studio: Terminal
+
+
+/app/extra/android-studio/jre
+
+
+
+- Error, No installed build tools found. Install the Android build tools version 30.0.3 or higher.
+
+/home/albert/Documents/dev/ionic/sandbox/ionic-vibration/platforms/android/CordovaLib/cordova.gradle
+
+```
+def minBuildToolsVersion = new Version(minBuildToolsVersionString)
+    def maxVersion = new Version((minBuildToolsVersion.getMajor() + 1) + ".0.0")
+
+    println '##############' + maxVersion
+    // def highestBuildToolsVersion = buildToolsDirContents
+    //     .collect { 
+    //         println '##############' + it
+    //         new Version(it) }
+    //     // Invalid inputs will be handled as 0.0.0
+    //     .findAll { it.isHigherThan('0.0.0') && it.isLowerThan(maxVersion) }
+    //     .max()
+
+    def highestBuildToolsVersion = new Version('32.1.0-rc1') <----------------------------- hard coded here!!!!
+    println '##############' + highestBuildToolsVersion
+
+    if (highestBuildToolsVersion == null) {
+        throw new RuntimeException("""
+            No installed build tools found. Install the Android build tools
+            version ${minBuildToolsVersionString} or higher.
+        """.replaceAll(/\s+/, ' ').trim())
+    }
+
+
+```
+
+- Error: Installed Build Tools revision 32.1.0-rc1 is corrupted
+
+https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted
+
+
+First of all, I faced this issue in Android Studio 4.2.2 and you do not need to downgrade the SDK build tool from 31 to 30 or change compile SDK version.
+
+The main problem is the two files missing in SDK build tool 31 that are:
+
+dx.bat
+dx.jar
+
+The solution is that these files are named d8 in the file location so changing their name to dx will solve the error.
+
+```
+First of all, I faced this issue in Android Studio 4.2.2 and you do not need to downgrade the SDK build tool from 31 to 30 or change compile SDK version.
+
+The main problem is the two files missing in SDK build tool 31 that are:
+
+dx.bat
+dx.jar
+The solution is that these files are named d8 in the file location so changing their name to dx will solve the error.
+
+The steps are below.
+
+For Windows
+go to the location
+
+ "C:\Users\user\AppData\Local\Android\Sdk\build-tools\31.0.0"
+find a file named d8.bat. This is a Windows batch file.
+
+rename d8.bat to dx.bat.
+
+in the folder lib ("C:\Users\user\AppData\Local\Android\Sdk\build-tools\31.0.0\lib")
+
+rename d8.jar to dx.jar
+
+Remember AppData is a hidden folder. Turn on hidden items to see the AppData folder.
+
+For macOS or Linux
+# change below to your Android SDK path
+cd ~/Library/Android/sdk/build-tools/31.0.0 \
+  && mv d8 dx \
+  && cd lib  \
+  && mv d8.jar dx.jar
+
+```
+
+
+
+
+echo $JAVA_HOME
+echo $PATH
+
+source ~/.bashrc
+
+
+ionic cordova build android
 
 
