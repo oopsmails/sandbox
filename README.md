@@ -328,6 +328,11 @@ cd ~/Library/Android/sdk/build-tools/31.0.0 \
 
 ```
 
+#### Android Studio Emulator too slow
+
+It turned out that the problem was due to the same old NVidia driver problems with Linux. To fix the crash, I opened AVD Manager from Android Studio (Tools->Android->AVD Manager), and then opened the virtual device settings. Then in the Emulated Performance section, next to Graphics, I selected Software rather than Automatic or Hardware. 
+
+
 
 
 
