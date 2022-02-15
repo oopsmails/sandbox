@@ -16,6 +16,29 @@ http://localhost:8100/folder/Inbox
 
 ## Ionic Tutorial #2 - Structure and open source project on github
 
+## Ionic Tutorial #3 - First page with Ionic - Splashscreen web
+
+ionic g page pages/loader
+
+npm start
+
+http://localhost:4200/loader
+
+
+https://ionicframework.com/docs/components
+
+https://ionicframework.com/docs/api/spinner
+
+delete initially generated *folder* folder, fix errors.
+
+ionic g page pages/login
+
+
+## Ionic Tutorial #4 - Login and Registration pages - HTML and SCSS
+
+
+
+
 
 
 
