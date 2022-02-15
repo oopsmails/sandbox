@@ -36,8 +36,23 @@ ionic g page pages/login
 
 ## Ionic Tutorial #4 - Login and Registration pages - HTML and SCSS
 
+https://ionicframework.com/docs/api/card
+
+https://ionicframework.com/docs/api/input
 
 
+https://ionicframework.com/docs/api/content
+
+ion-content
+
+CSS Custom Properties: --background
+
+
+ionic g page pages/register
+
+ion-radio-group
+
+## Ionic Tutorial #5 - Using the Ionic components to build pages
 
 
 
