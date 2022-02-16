@@ -54,7 +54,17 @@ ion-radio-group
 
 ## Ionic Tutorial #5 - Using the Ionic components to build pages
 
+ionic g page pages/home
 
+https://ionicframework.com/docs/api/buttons  
+Toolbar ::> ion-buttons
+
+ion-list
+
+
+
+
+Reciclica
 
 
 
