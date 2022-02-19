@@ -61,6 +61,9 @@ Toolbar ::> ion-buttons
 
 ion-list
 
+ion-fab
+
+ionic g page pages/pickup-call
 
 
 

@@ -23,7 +23,8 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+      <ion-card-subtitle>Last pickup call, we have two bags that are full, one with plastic and the other with glasses
+      </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <ion-item lines="none">
@@ -35,4 +36,10 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="newPickupCall()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
