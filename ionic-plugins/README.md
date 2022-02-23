@@ -118,6 +118,17 @@ npm test
 
 http://localhost:9876/
 
+expect(true).toBeFalsy(); <---- to test around first for running
+
+angular Testbed.get deprecated
+
+router = TestBed.get(Router); ----> router = TestBed.inject(Router);
+
+
+Use *fakeAsync* to simulate async, e.g, setTimeout call here, and use *tick(1500);* to wait the *setTimeout(..., 1000)* from *ionic-plugins\src\app\pages\loader\loader.page.ts*
+
+
+http://localhost:4200/
 
 
 

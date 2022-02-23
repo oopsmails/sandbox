@@ -20,7 +20,7 @@ describe('PickupCallPage', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(PickupCallPage);
-    router = TestBed.get(Router);
+    router = TestBed.inject(Router);
 
     component = fixture.componentInstance;
   }));
