@@ -112,16 +112,22 @@ notes="we have two bags that are full, one with plastic and the other with glass
 
 ```
 
+## Ionic Tutorial #7 - Page navigation with TDD
+
+npm test
+
+http://localhost:9876/
+
+
+
+
 
 http://localhost:4200/home
 
 http://localhost:4200/pickup-calls
 
-## Ionic Tutorial #7 - Page navigation with TDD
 
-
-
-
+http://localhost:4200/loader
 
 Reciclica
 
