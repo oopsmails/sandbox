@@ -65,6 +65,62 @@ ion-fab
 
 ionic g page pages/pickup-call
 
+ionic g page pages/pickup-calls
+
+#5: 17:29 of 20:16
+
+
+ionic g component components/pickup-call-card
+
+## Ionic Tutorial #6 - Creating reusable custom components
+
+#6: 20:50 of 22:39
+
+- 20220219: Need catch up here
+
+```
+- ionic-plugins\src\app\components\pickup-call-card\pickup-call-card.component.html
+
+define where to put *ng-content*
+
+<ng-content select="[header]"></ng-content>
+... ... other contents ... ...
+<ng-content select="[footer]"></ng-content>
+
+
+- ionic-plugins\src\app\pages\home\home.page.html, using ng-content
+
+<app-pickup-call-card status="hold" updatedAt="25/04/2021 16:29" createdAt="24/04/2021"
+notes="we have two bags that are full, one with plastic and the other with glasses">
+    <ion-card-header header> <----------------------------------- Here, pass in *header* content into component page
+        <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button color="success" fill="clear" size="full" footer (click)="goToPickupCalls()">See all...</ion-button> <----------------------------------- Here, pass in *footer* content into component page
+</app-pickup-call-card>
+
+- ionic-plugins\src\app\pages\pickup-calls\pickup-calls.page.html, using *pickup-call-card.component*, but NOT using ng-content
+
+<ion-content>
+    <app-pickup-call-card status="hold" updatedAt="25/04/2021 16:29" createdAt="24/04/2021"
+    notes="we have two bags that are full, one with plastic and the other with glasses"></app-pickup-call-card>
+
+    <app-pickup-call-card status="processing" updatedAt="24/04/2021 10:00" createdAt="23/04/2021"
+    notes="we have two bags that are full"></app-pickup-call-card>
+
+    <app-pickup-call-card status="finished" updatedAt="23/04/2021 18:00" createdAt="22/04/2021" value="$ 10,00"></app-pickup-call-card>
+</ion-content>
+
+```
+
+
+http://localhost:4200/home
+
+http://localhost:4200/pickup-calls
+
+## Ionic Tutorial #7 - Page navigation with TDD
+
+
+
 
 
 Reciclica
