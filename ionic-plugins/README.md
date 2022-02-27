@@ -130,7 +130,96 @@ Use *fakeAsync* to simulate async, e.g, setTimeout call here, and use *tick(1500
 
 ## Ionic Tutorial #8 - Login Page #1 - Login form with Reactive forms
 
+
+- 20220223: Need catch up here 
 10:45, using LoginForm in Login Page
+
+
+
+
+## Ionic Tutorial #9 - Error message component for form validation
+
+ionic g component components/error-message
+
+
+## Ionic Tutorial #10 - Starting with NGRX - Loading component
+
+NGRX: Reactive State for Angular
+
+State Tracking .... introducing Store !!!!!
+
+
+npm install @ngrx/store --save
+
+npm install @ngrx/store-devtools
+
+
+
+Ionic Tutorial #13.4 - Register Page - Implementing side effects with Redux NGRX Effects
+
+02:05 of 07:20, implement register() with NestJS and Firestore ????
+
+
+- Register flow
+27-Ionic Tutorial 136  Register Page  Setting home page as root after loginregistrationFHR
+
+src\app\pages\register\register.page.spec.ts
+
+
+27-Ionic Tutorial 136  Register Page  Setting home page as root after loginregistrationFHR
+
+04:10 of 06:44, debugging using Redux plugin, example
+
+05:30 of 06:44, need to remove Subscription of login page and register page once lands on home page!
+
+- Using navController.navigateRoot
+
+this.navController.navigateRoot('home'); <------------- by doing this, the Subscription will be destroyed!!!
+
+
+28-Ionic Tutorial 137  Register Page  Getting address details with google autocompleteFHR
+
+
+02:25 of 06:43, *@ViewChild* and *IonInput*
+
+- Using autocomplete
+
+```
+
+- src\app\pages\register\register.page.ts
+
+  ionViewDidEnter() {
+    this.autocomplete.getInputElement().then((ref: any) => {
+      const autocomplete = new google.maps.places.Autocomplete(ref);
+      autocomplete.addListener('place_changed', () => {
+        this.registerForm.setAddress(autocomplete.getPlace())
+      })
+    })
+  }
+
+```
+
+
+29-Ionic Tutorial 138  Getting user address with Geolocation and Google maps geocodingFHR
+
+- Get location by GPS
+- Transform location into address
+- Fill address form
+
+
+https://ionicframework.com/docs/native/geolocation
+
+npm install cordova-plugin-geolocation
+npm install @ionic-native/geolocation
+ionic cap sync
+
+npm install @ionic-native/core
+
+
+- v6
+npm install cordova-plugin-geolocation 
+npm install @awesome-cordova-plugins/geolocation 
+ionic cap sync
 
 
 
